@@ -1,15 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <Header></Header>
+    <router-view/>
 </template>
 
-<style>
+<style lang="scss">
+ @font-face {
+     font-family: Lobster;
+     src: url(./assets/fonts/Lobster.ttf);
+ }
  @font-face {
      font-family: Raleway;
      src: url(./assets/fonts/Raleway.ttf);
+ }
+ body {
+     margin: 0;
+ }
+ a {
+     text-decoration: none;
+     color: $text-color;
  }
  #app {
      font-family: Raleway;
@@ -17,3 +25,14 @@
      -moz-osx-font-smoothing: grayscale;
  }
 </style>
+
+<script>
+ import Header from '@/components/Header.vue'
+
+ export default {
+     name: 'App',
+     components: {
+         Header
+     }
+ }
+</script>
