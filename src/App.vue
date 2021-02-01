@@ -5,10 +5,6 @@
 
 <style lang="scss">
  @font-face {
-     font-family: Lobster;
-     src: url(./assets/fonts/Lobster.ttf);
- }
- @font-face {
      font-family: Raleway;
      src: url(./assets/fonts/Raleway.ttf);
  }
