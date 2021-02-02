@@ -83,8 +83,9 @@ nav {
 }
 a.desktop {
     padding: 0 15px;
+    letter-spacing: 0.1em;
     height: 100%;
-    width: 125px;
+    width: 150px;
     font-weight: bold;
     font-size: 20px;
     display: flex;
@@ -93,6 +94,7 @@ a.desktop {
 }
 a.mobile {
     width: 100%;
+    letter-spacing: 0.1em;
     font-size: 20px;
     display: flex;
     justify-content: center;
