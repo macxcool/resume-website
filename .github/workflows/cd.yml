@@ -3,27 +3,25 @@ on:
     branches:
       - main
 
-name: Deploy to the server
+name: CD
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build # will run `yarn build` command
   deploy:
-    needs: [build]
     name: Deploy
     runs-on: ubuntu-latest
     
     steps:
-      - uses: up9cloud/action-rsync@v1.3
+      - uses: actions/checkout@v2
+      - name: Install modules
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+      - name: Build
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build # will run `yarn build` command
+      - name: Deploy
+        uses: up9cloud/action-rsync@v1.3
         env:
           HOST: four.garin.xyz
           USER: pi
