@@ -111,10 +111,20 @@ h2 {
 }
 @media all and (max-width: 375px)
 {
+    h1 {
+        font-size: 33px;
+    }
+    h2 {
+        font-size: 16px;
+    }
     .photo {
         width: 90%
     }
+    .stack {
+        justify-content: space-around;
+    }
     .stack img {
+        margin: 20px 0;
         height: 80px;
         width: 100px;
     }
