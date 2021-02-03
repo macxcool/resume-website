@@ -109,6 +109,16 @@ h2 {
         width: 125px;
     }
 }
+@media all and (max-width: 375px)
+{
+    .photo {
+        width: 90%
+    }
+    .stack img {
+        height: 80px;
+        width: 100px;
+    }
+}
 </style>
 
 <script>
