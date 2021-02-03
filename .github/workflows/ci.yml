@@ -7,16 +7,19 @@ on:
     branches: [ main ]
 jobs:
   build:
-    name: Check
+    name: Lint & Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Install modules
+        uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Lint
+        uses: Borales/actions-yarn@v2.3.0
         with:
-          cmd: lint # will run `yarn lint` command:  
-      - uses: borales/actions-yarn@v2.0.0
+          cmd: lint # will run `yarn lint` command
+      - name: Build
+        uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: build # will run `yarn build` command
