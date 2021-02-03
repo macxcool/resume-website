@@ -23,12 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
       - uses: up9cloud/action-rsync@v1.3
         env:
           HOST: four.garin.xyz
           USER: pi
           ARGS: -a
           KEY: ${{secrets.DEPLOY_SSH_KEY}}
-          SOURCE: ./dist/
+          SOURCE: dist/
           TARGET: /var/www/html/resume-website/
