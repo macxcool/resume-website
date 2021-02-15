@@ -95,7 +95,7 @@ export default {
         sendMessage(event) {
             event.preventDefault()
             let xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-            xmlhttp.open("POST", "http://achille.garin.xyz:8000/");
+            xmlhttp.open("POST", "https://achille.garin.xyz:8000/");
             xmlhttp.setRequestHeader("Content-Type", "application/json");
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4) {
