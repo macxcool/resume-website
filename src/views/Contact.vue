@@ -77,6 +77,8 @@ textarea {
 </style>
 
 <script>
+import axios from "axios";
+
 export default {
     name: 'Contact',
     data() {
@@ -94,25 +96,25 @@ export default {
     methods: {
         sendMessage(event) {
             event.preventDefault()
-            let xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-            xmlhttp.open("POST", "https://achille.garin.xyz:8000/");
-            xmlhttp.setRequestHeader("Content-Type", "application/json");
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4) {
-                    if (xmlhttp.status == 200){
-                        this.showServerError = false
-                        this.showBadRequest = false
-                        this.success = true
-                    }
-                    else if (xmlhttp.status == 400){
-                        this.showBadRequest = true
-                    }
-                    else if (xmlhttp.status == 500){
-                        this.showServerError = true
-                    }
+            axios.post('https://achille.garin.xyz:8000/', {
+                Contact: this.email,
+                Subject: this.subject,
+                Body: this.message
+            }).then(function () {
+                this.showServerError = false
+                this.showBadRequest = false
+                this.success = true
+            }).catch(function (error) {
+                if (error.response.status == 400){
+                    this.showBadRequest = true
                 }
-            };
-            xmlhttp.send(JSON.stringify({Contact:this.email, Subject:this.subject, Body:this.message}));
+                else if (error.response.status == 500){
+                    this.showServerError = true
+                }
+                else {
+                    console.log(error)
+                }
+            });
         }
     }
 }
