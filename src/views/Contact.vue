@@ -16,16 +16,24 @@
       </div>
       <p v-show="showBadRequest">{{ badRequest }}</p>
       <p v-show="showServerError">{{ serverError }}</p>
-      <p v-if="success" class="success">{{ successMessage }}</p>
-      <input v-else @click="sendMessage" class="submit" type="submit" value="Submit">
+      <img v-show="spinning" class="loading" alt="" src="../assets/icons/sync.svg"/>
+      <p v-show="success" class="success">{{ successMessage }}</p>
+      <input v-show="!success && !spinning" @click="sendMessage" class="submit" type="submit" value="Submit">
     </form>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @keyframes spinning {
-  0%   {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+.loading {
+    height: 30px;
+    margin: 10px 0;
+    animation-name: spinning;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 h1 {
     text-align: center;
@@ -104,6 +112,7 @@ export default {
             email: "",
             subject: "",
             message: "",
+            spinning: false,
             badRequest: "Every fields are required and your email must be valid for the message to be proceed",
             showBadRequest: false,
             serverError: "Something went wrong please try again later",
@@ -115,6 +124,7 @@ export default {
     methods: {
         sendMessage(event) {
             event.preventDefault()
+            this.spinning = true
             axios.post('https://achille.garin.xyz:8000/', {
                 Contact: this.email,
                 Subject: this.subject,
@@ -122,6 +132,7 @@ export default {
             }).then(() => {
                 this.showServerError = false
                 this.showBadRequest = false
+                this.spinning = false
                 this.success = true
             }).catch((error) => {
                 if (error.response.status == 400){
@@ -133,6 +144,7 @@ export default {
                 else {
                     console.log(error)
                 }
+                this.spinning = false
             });
         }
     }
