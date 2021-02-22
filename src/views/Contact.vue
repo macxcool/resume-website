@@ -100,6 +100,40 @@ p {
     padding: 15px;
     border: 2px solid #FF0134;
 }
+@media all and (max-width: 900px)
+{
+    form {
+        width: 500px;
+    }
+    .field {
+        width: 476px;
+    }
+    input {
+        padding: 0 10px;
+    }
+    textarea, p {
+        padding: 10px;
+    }
+}
+@media all and (max-width: 550px)
+{
+    form {
+        width: 100%;
+    }
+    form>div {
+        width: 90%;
+    }
+    .field {
+        width: calc(100% - 24px);
+    }
+    .submit {
+        align-self: center;
+        width: 90%;
+    }
+    p {
+        width: calc(90% - 24px);
+    }
+}
 </style>
 
 <script>
