@@ -4,11 +4,11 @@
     <form>
       <div>
         <label for="email">Email address:</label><br>
-        <input v-model="email" type="email" id="email" name="email" placeholder="johndoe@gmail.com" required><br>
+        <input v-model="email" type="email" id="email" name="email" placeholder="johndoe@gmail.com"><br>
       </div>
       <div>
         <label for="subject">Subject:</label><br>
-        <input v-model="subject" type="text" id="subject" name="subject" placeholder="Type your subject here" required>
+        <input v-model="subject" type="text" id="subject" name="subject" placeholder="Type your subject here">
       </div>
       <div>
         <label for="message">Message:</label><br>
@@ -16,12 +16,17 @@
       </div>
       <p v-show="showBadRequest">{{ badRequest }}</p>
       <p v-show="showServerError">{{ serverError }}</p>
-      <input @click="sendMessage" class="submit" type="submit" value="Submit">
+      <p v-if="success" class="success">{{ successMessage }}</p>
+      <input v-else @click="sendMessage" class="submit" type="submit" value="Submit">
     </form>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@keyframes spinning {
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
 h1 {
     text-align: center;
     letter-spacing: 0.1em;
@@ -74,6 +79,19 @@ textarea {
     display: flex;
     flex-direction: column;
 }
+.success {
+    color: #32CD32;
+    border-color: #32CD32;
+}
+p {
+    @extend .field;
+    color: #FF0134;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #FF0134;
+}
 </style>
 
 <script>
@@ -86,10 +104,11 @@ export default {
             email: "",
             subject: "",
             message: "",
-            badRequest: "Every field are required and your email must be valid for the message to be proceed",
+            badRequest: "Every fields are required and your email must be valid for the message to be proceed",
             showBadRequest: false,
             serverError: "Something went wrong please try again later",
             showServerError: false,
+            successMessage: "Your message has been successfully sent",
             success: false
         }
     },
@@ -100,11 +119,11 @@ export default {
                 Contact: this.email,
                 Subject: this.subject,
                 Body: this.message
-            }).then(function () {
+            }).then(() => {
                 this.showServerError = false
                 this.showBadRequest = false
                 this.success = true
-            }).catch(function (error) {
+            }).catch((error) => {
                 if (error.response.status == 400){
                     this.showBadRequest = true
                 }
