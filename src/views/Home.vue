@@ -7,7 +7,7 @@
           <a href="https://www.linkedin.com/in/achille-garin"><img class="linkedin" alt="" src="../assets/icons/linkedin.svg"/></a>
           <a href="https://github.com/achille-garin"><img class="github" alt="" src="../assets/icons/github.svg"/></a>
         </div>
-        <h2>Hello my name is Achille, I'm a computer science engineering student who develops programs beside courses.</h2>
+        <h2>Hello, my name is Achille. I'm a computer science engineering student who develops programs alongside my courses.</h2>
       </div>
       <img class="photo" src="../assets/images/Achille.webp"/>
     </div>
