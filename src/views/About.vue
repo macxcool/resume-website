@@ -99,13 +99,13 @@ export default {
                     picture: require('../assets/images/bio/code.svg'),
                     pictureAlt: "Code illustration logo",
                     downsize: 0,
-                    text: 'I had my first experience with developpment in 2014 as a hobby, and it quickly became a passion. Since then I have been learning many other languages out of curiosity or for learning purposes. Right now I consider <strong><a href="https://golang.org/" target="blank">Golang</a></strong> to be a good thing to know for the modern IT world; that\'s why I chose it. Simplicity and performance are its key features, in my opinion. Also, for me there is no debate that Vue.js is the best frontend framework.'
+                    text: 'I had my first experience with development in 2014 as a hobby, and it quickly became a passion. Since then I have been learning many other languages out of curiosity or for learning purposes. Right now I consider <strong><a href="https://golang.org/" target="blank">Golang</a></strong> to be a good thing to know for the modern IT world; that\'s why I chose it. Simplicity and performance are its key features, in my opinion. Also, for me there is no debate that Vue.js is the best frontend framework.'
                 },
                 {
                     picture: require('../assets/images/bio/gnu.svg'),
                     pictureAlt: "GNU head logo",
                     downsize: 0,
-                    text: 'The <strong><a href="https://fsf.org/" target="blank">Free Software</a></strong> movement is something that is really close to my heart. Since 2016 I use GNU/Linux operating systems as a daily driver on my main computer. I know this type of OS like the back of my hand. It is handy to know how to use the GO TO system for devops and system administration ;-)'
+                    text: 'The <strong><a href="https://fsf.org/" target="blank">Free Software</a></strong> movement is something that is really close to my heart. Since 2016 I have been using GNU/Linux operating systems as a daily driver on my main computer. I know this type of OS like the back of my hand. It is handy to know how to use the Go-To system for devops and system administration ;-)'
                 }
             ]
         }
