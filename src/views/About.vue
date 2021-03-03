@@ -93,13 +93,13 @@ export default {
                     picture: require('../assets/images/bio/cesi.svg'),
                     pictureAlt: "Cesi logo",
                     downsize: 15,
-                    text: 'I am actually in my third year out of five at the <strong><a href="https://ecole-ingenieurs.cesi.fr/en/" target="blank">CESI</a></strong> school. I prepare here an engineer degree in computer science. This environment give me a lot of skills including: team work, autonomous capabilities and quick learning for main ones. My school use the <strong><a href="https://ecole-ingenieurs.cesi.fr/en/pedagogy-support/" target="blank">Problem Based Learning</a></strong> (PBL), it\'s a pro active method that is very close to real world jobs so I can be quickly available in an company project.'
+                    text: 'I am now in my third year of a five program at the <strong><a href="https://ecole-ingenieurs.cesi.fr/en/" target="blank">CESI</a></strong> school. I am working on an Engineer degree in computer science. This has allowed me to develop many skills, especially teamwork, and self-directed and quick learning. My school uses the <strong><a href="https://ecole-ingenieurs.cesi.fr/en/pedagogy-support/" target="blank">Problem Based Learning</a></strong> (PBL) approach. This is a pro-active method that is very similar to real world jobs so I can be quickly integrated into a company project.'
                 },
                 {
                     picture: require('../assets/images/bio/code.svg'),
                     pictureAlt: "Code illustration logo",
                     downsize: 0,
-                    text: 'I had my first touch with developpment in 2014 as a Hobby and it quickly became a passion. Since there I have been going through many other languages by curiosity or for the purpose of my formation. Today <strong><a href="https://golang.org/" target="blank">Golang</a></strong> seems to me a really good competitor in the IT modern world. That why I choose it, simplicity and performance can resume the all language to me. For Vue.js there is no debate it is just the best in its field.'
+                    text: 'I had my first experience with developpment in 2014 as a hobby, and it quickly became a passion. Since then I have been learning many other languages out of curiosity or for learning purposes. Right now I consider <strong><a href="https://golang.org/" target="blank">Golang</a></strong> to be a good thing to know for the modern IT world; that\'s why I chose it. Simplicity and performance are its key features, in my opinion. Also, for me there is no debate that Vue.js is the best frontend framework.'
                 },
                 {
                     picture: require('../assets/images/bio/gnu.svg'),
