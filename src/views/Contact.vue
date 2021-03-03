@@ -147,11 +147,11 @@ export default {
             subject: "",
             message: "",
             spinning: false,
-            badRequest: "Every fields are required and your email must be valid for the message to be proceed",
+            badRequest: "Every field is required and your email must be valid for the message to proceed.",
             showBadRequest: false,
-            serverError: "Something went wrong please try again later",
+            serverError: "Something went wrong. Please try again later.",
             showServerError: false,
-            successMessage: "Your message has been successfully sent",
+            successMessage: "Your message has been successfully sent.",
             success: false
         }
     },
